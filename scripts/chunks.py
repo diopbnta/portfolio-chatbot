@@ -7,7 +7,7 @@ load_dotenv()
 index = Index.from_env()
 
 def run_ingestion():
-    # Dossier où se trouvent tes fichiers : parcours.md, experience.md, etc.
+    # Dossier où se trouvent les fichiers : parcours.md, experience.md ...
     data_path = Path("data")
     vectors = []
 
@@ -55,4 +55,5 @@ def run_ingestion():
         print("Aucun contenu trouvé dans les fichiers .md.")
 
 if __name__ == "__main__":
+
     run_ingestion()
