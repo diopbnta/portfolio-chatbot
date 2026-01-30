@@ -7,6 +7,14 @@ load_dotenv()
 index = Index.from_env()
 
 def run_ingestion():
+    """
+    C'est ma fonction pour nettoyer et envoyer mes données vers Upstash. 
+    Elle va chercher tous les fichiers .md dans mon dossier 'data' et les découper 
+    proprement grâce aux balises '##'. Pour chaque morceau, je crée un vecteur 
+    avec un ID unique et je garde le titre et le nom du fichier en métadonnées. 
+    À la fin, ça envoie tout d'un coup vers la base de données vectorielle pour 
+    que mon IA puisse faire des recherches précises par section.
+    """
     # Dossier où se trouvent les fichiers : parcours.md, experience.md ...
     data_path = Path("data")
     vectors = []
@@ -57,3 +65,4 @@ def run_ingestion():
 if __name__ == "__main__":
 
     run_ingestion()
+
